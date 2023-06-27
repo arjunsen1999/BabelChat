@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT;
 const { connection } = require("./config/db");
+const { ErrorHandler } = require("./middleware/ErrorHandling.middleware");
 
 //All Routes import here
 
@@ -16,6 +17,7 @@ app.use(cors());
 // if Routes are not exists
 
 // Error handling middleware
+app.use(ErrorHandler);
 
 // listening server and connection
 app.listen(PORT, () => {
