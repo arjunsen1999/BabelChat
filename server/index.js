@@ -8,12 +8,14 @@ const { ErrorHandler } = require("./middleware/ErrorHandling.middleware");
 const { AppError } = require("./class/AppError");
 
 //All Routes import here
+const { authRouter } = require("./routes/auth.routes");
 
 // Global Middleware
 app.use(express.json());
 app.use(cors());
 
 // All Routes
+app.use('/auth', authRouter);
 
 // if Routes are not exists
 app.all("*", (req, res, next) => {
