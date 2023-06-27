@@ -1,9 +1,10 @@
 import React from 'react';
+import AllRoutes from './allRoutes/AllRoutes';
 
 function App() {
   return (
    <>
-    <h1>Welcome to BabelChat</h1>
+    <AllRoutes />
    </>
   );
 }
