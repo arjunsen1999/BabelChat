@@ -57,6 +57,7 @@ exports.login = asyncHandler(async (req, res, next) => {
     data: {
       token,
       name: isUserExists.name,
+      profile_picture: isUserExists.profile_picture,
     },
   };
   return res.status(200).json(response);
