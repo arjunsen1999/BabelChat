@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 
 // Signup :-> http://localhost:8080/auth/signup
 exports.signup = asyncHandler(async (req, res, next) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, profile_picture = "" } = req.body;
 
   // if user with this email exists
   const isUserExists = await AuthModel.findOne({ email });
@@ -16,9 +16,17 @@ exports.signup = asyncHandler(async (req, res, next) => {
 
   // if user not exists then create user
   // hash password
-  const hashPassword = bcrypt.hash(password, process.env.SALT_ROUND);
+  const hashPassword = await bcrypt.hash(
+    password,
+    Number(process.env.SALT_ROUND)
+  );
   // create user
-  const user = await AuthModel.create({ name, email, password: hashPassword });
+  const user = await AuthModel.create({
+    name,
+    email,
+    password: hashPassword,
+    profile_picture,
+  });
 
   // send response
   const response = {
@@ -43,8 +51,8 @@ exports.login = asyncHandler(async (req, res, next) => {
   const isPassword = await bcrypt.compare(password, isUserExists.password);
   if (!isPassword) {
     next(new AppError(`Invalid credentials`, 400));
+    return;
   }
-
   // if password is match then create jwt token
   const token = jwt.sign({ _id: isUserExists._id }, process.env.SECRET_KEY, {
     expiresIn: process.env.JWT_EXPIRES,
