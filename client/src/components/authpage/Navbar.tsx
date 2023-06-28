@@ -32,7 +32,7 @@ export default function Navbar({ login, signup }: NavbarProps) {
               cursor={"pointer"}
               color={login ? "#34A853" : "#9E9E9E"}
               position={"relative"}
-              className={login? style.active : ""}
+              className={login ? style.active : ""}
             >
               Log in
             </Text>
@@ -43,7 +43,7 @@ export default function Navbar({ login, signup }: NavbarProps) {
               cursor={"pointer"}
               color={signup ? "#34A853" : "#9E9E9E"}
               position={"relative"}
-              className={signup? style.active : ""}
+              className={signup ? style.active : ""}
             >
               Sign up
             </Text>

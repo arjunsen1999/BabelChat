@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
-import PinkCircle from '../../components/signup/PinkCircle'
-import BlueCircle from '../../components/signup/BlueCircle'
+import PinkCircle from '../../components/authpage/PinkCircle'
+import BlueCircle from '../../components/authpage/BlueCircle'
 import Navbar from '../../components/authpage/Navbar'
 
 export default function SignUpPage() {
