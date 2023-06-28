@@ -2,9 +2,6 @@ import {
   Box,
   Button,
   Checkbox,
-  Input,
-  InputGroup,
-  InputLeftElement,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -12,6 +9,7 @@ import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { BiLock } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import LoginInputBox from "./LoginInputBox";
 
 export default function LoginBox() {
   return (
@@ -19,38 +17,16 @@ export default function LoginBox() {
       <Box w={"400px"}>
         <form action="">
           <Stack spacing={6} mb="30px">
-            <InputGroup>
-              <InputLeftElement pointerEvents="none">
-                <AiOutlineMail color="white" fontSize={"28px"} />
-              </InputLeftElement>
-              <Input
-                type="email"
-                borderRadius={"0px"}
-                placeholder="Enter Email"
-                border={"none"}
-                borderBottom={"1px solid white"}
-                color={"white"}
-                fontSize={"19px"}
-                focusBorderColor={"none"}
-              />
-            </InputGroup>
-
-            <InputGroup>
-              <InputLeftElement pointerEvents="none">
-                <BiLock color="white" fontSize={"28px"} />
-              </InputLeftElement>
-              <Input
-                type="password"
-                borderRadius={"0px"}
-                placeholder="Enter Password"
-                border={"none"}
-                borderBottom={"1px solid white"}
-                color={"white"}
-                fontSize={"19px"}
-                focusBorderColor={"none"}
-              />
-            </InputGroup>
-
+            <LoginInputBox
+              icon={<AiOutlineMail color="white" fontSize={"28px"} />}
+              type="email"
+              placeholder="Enter Email"
+            />
+            <LoginInputBox
+              icon={<BiLock color="white" fontSize={"28px"} />}
+              type="password"
+              placeholder="Enter Password"
+            />
             <Stack
               direction={{ base: "column", sm: "row" }}
               align={"start"}
