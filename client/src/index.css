@@ -26,3 +26,13 @@ input:-webkit-autofill:active {
   transition: background-color 5000s;
   -webkit-text-fill-color: #fff !important;
 }
+
+.active .sidebar-active{
+  background-color: #4B75A7;
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  height: 80%;
+  border-radius: 12px;
+  z-index: 5;
+}
