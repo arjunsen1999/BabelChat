@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import React from "react";
 import SideBar from "../../components/sidebar/SideBar";
 
-export default function Home() {
+export default function Group() {
   return (
     <>
       <Box

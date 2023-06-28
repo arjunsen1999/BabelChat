@@ -55,7 +55,7 @@ export default function SideBar() {
                     </Box>
                   </NavLink>
 
-                  <Link to="/" style={{ width: "100%" }}>
+                  <NavLink to="/group" style={{ width: "100%" }}>
                     <Box
                       borderTopWidth={"1px"}
                       w="100%"
@@ -63,8 +63,9 @@ export default function SideBar() {
                       display={"flex"}
                       alignItems={"center"}
                       justifyContent={"center"}
-                      py={"8px"}
+                      py={"15px"}
                       cursor={"pointer"}
+                      position={"relative"}
                     >
                       <Box className="sidebar-active"></Box>
                       <Box zIndex={10}>
@@ -72,9 +73,9 @@ export default function SideBar() {
                         <HiUserGroup fontSize={"20px"} color={"white"} />{" "}
                       </Box>
                     </Box>
-                  </Link>
+                  </NavLink>
 
-                  <Link to="/" style={{ width: "100%" }}>
+                  <NavLink to="/setting" style={{ width: "100%" }}>
                     <Box
                       borderTopWidth={"1px"}
                       w="100%"
@@ -82,15 +83,16 @@ export default function SideBar() {
                       display={"flex"}
                       alignItems={"center"}
                       justifyContent={"center"}
-                      py={"8px"}
+                      py={"15px"}
                       cursor={"pointer"}
+                      position={"relative"}
                     >
                       <Box className="sidebar-active"></Box>
                       <Box zIndex={10}>
                         <AiFillSetting fontSize={"20px"} color={"white"} />
                       </Box>
                     </Box>
-                  </Link>
+                  </NavLink>
                 </VStack>
               </VStack>
             </Box>
@@ -103,7 +105,9 @@ export default function SideBar() {
                 py={"8px"}
                 cursor={"pointer"}
               >
-                <RxExit fontSize={"20px"} color={"white"} />
+                <Link to="/login">
+                  <RxExit fontSize={"20px"} color={"white"} />
+                </Link>
               </Box>
             </Box>
           </Box>
