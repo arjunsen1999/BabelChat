@@ -1,10 +1,17 @@
-import { Avatar, Box, Stack, VStack } from "@chakra-ui/react";
+import { Avatar, Box, VStack } from "@chakra-ui/react";
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MdSend } from "react-icons/md";
 import { AiFillSetting } from "react-icons/ai";
 import { HiUserGroup } from "react-icons/hi";
 import { RxExit } from "react-icons/rx";
+import NavItem from "./NavItem";
+
+const NavItemIcon = [
+  {icon : <MdSend color="white" fontSize={"20px"}/>, link : "/home"},
+  {icon : <HiUserGroup color="white" fontSize={"20px"}/>, link : "/group"},
+  {icon : <AiFillSetting color="white" fontSize={"20px"}/>, link : "/setting"},
+]
 
 export default function SideBar() {
   return (
@@ -36,63 +43,11 @@ export default function SideBar() {
                   <Avatar src="https://bit.ly/broken-link" />
                 </Link>
                 <VStack spacing={4} w="100%">
-                  <NavLink to="/home" style={{ width: "100%" }}>
-                    <Box
-                      borderTopWidth={"1px"}
-                      w="100%"
-                      borderBottomWidth={"1px"}
-                      display={"flex"}
-                      alignItems={"center"}
-                      justifyContent={"center"}
-                      py={"15px"}
-                      cursor={"pointer"}
-                      position={"relative"}
-                    >
-                      <Box className="sidebar-active"></Box>
-                      <Box zIndex={10}>
-                        <MdSend fontSize={"20px"} color={"white"} />
-                      </Box>
-                    </Box>
-                  </NavLink>
-
-                  <NavLink to="/group" style={{ width: "100%" }}>
-                    <Box
-                      borderTopWidth={"1px"}
-                      w="100%"
-                      borderBottomWidth={"1px"}
-                      display={"flex"}
-                      alignItems={"center"}
-                      justifyContent={"center"}
-                      py={"15px"}
-                      cursor={"pointer"}
-                      position={"relative"}
-                    >
-                      <Box className="sidebar-active"></Box>
-                      <Box zIndex={10}>
-                        {" "}
-                        <HiUserGroup fontSize={"20px"} color={"white"} />{" "}
-                      </Box>
-                    </Box>
-                  </NavLink>
-
-                  <NavLink to="/setting" style={{ width: "100%" }}>
-                    <Box
-                      borderTopWidth={"1px"}
-                      w="100%"
-                      borderBottomWidth={"1px"}
-                      display={"flex"}
-                      alignItems={"center"}
-                      justifyContent={"center"}
-                      py={"15px"}
-                      cursor={"pointer"}
-                      position={"relative"}
-                    >
-                      <Box className="sidebar-active"></Box>
-                      <Box zIndex={10}>
-                        <AiFillSetting fontSize={"20px"} color={"white"} />
-                      </Box>
-                    </Box>
-                  </NavLink>
+                  {
+                    NavItemIcon?.map((ele, idx) =>{
+                      return <NavItem key={idx} {...ele} />
+                    })
+                  }
                 </VStack>
               </VStack>
             </Box>
