@@ -31,6 +31,7 @@ export default function LoginBox() {
                 borderBottom={"1px solid white"}
                 color={"white"}
                 fontSize={"19px"}
+                focusBorderColor={"none"}
               />
             </InputGroup>
 
@@ -46,6 +47,7 @@ export default function LoginBox() {
                 borderBottom={"1px solid white"}
                 color={"white"}
                 fontSize={"19px"}
+                focusBorderColor={"none"}
               />
             </InputGroup>
 
@@ -80,7 +82,10 @@ export default function LoginBox() {
         </form>
         <Box mt={"40px"}>
           <Text textAlign={"center"} color={"white"} fontSize={"14px"}>
-            Don’t have account? <Link to="/signup"><span style={{color : "#34a853"}}>Sign up here</span></Link>
+            Don’t have account?{" "}
+            <Link to="/signup">
+              <span style={{ color: "#34a853" }}>Sign up here</span>
+            </Link>
           </Text>
         </Box>
       </Box>

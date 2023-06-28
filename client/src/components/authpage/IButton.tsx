@@ -37,7 +37,7 @@ export default function IButton() {
           <Portal>
             <PopoverContent>
               <PopoverArrow />
-              <PopoverHeader>Header</PopoverHeader>
+              <PopoverHeader>Information</PopoverHeader>
               <PopoverCloseButton />
               <PopoverBody>
                 <Text>

@@ -18,3 +18,11 @@ body {
   --auth-round-blue: #1d3082;
   --auth-round-pink: #7b1386;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: #fff !important;
+}

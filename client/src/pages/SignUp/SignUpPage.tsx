@@ -9,7 +9,7 @@ import IButton from '../../components/authpage/IButton'
 export default function SignUpPage() {
   return (
     <>
-     <Box w="100%" minH={"100vh"}position={"relative"} p={"50px"}>
+     <Box w="100%" minH={"100vh"} position={"relative"} p={"50px"}>
         <PinkCircle />
         <BlueCircle />
         <Navbar login={false} signup={true} />

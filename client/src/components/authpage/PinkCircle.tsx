@@ -8,7 +8,7 @@ export default function PinkCircle() {
         w={"300px"}
         h="300px"
         bg={"#7b1386"}
-        position={"absolute"}
+        position={"fixed"}
         bottom={"-20%"}
         left={"140px"}
         borderRadius={"50%"}

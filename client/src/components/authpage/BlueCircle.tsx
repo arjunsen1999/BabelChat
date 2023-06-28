@@ -8,7 +8,7 @@ export default function BlueCircle() {
         w={"40%"}
         h="600px"
         bg={"#1d3082"}
-        position={"absolute"}
+        position={"fixed"}
         bottom={"-50%"}
         left={"-20%"}
         borderRadius={"50%"}

@@ -31,6 +31,7 @@ export default function SignupBox() {
                 borderBottom={"1px solid white"}
                 color={"white"}
                 fontSize={"19px"}
+                focusBorderColor={"none"}
               />
             </InputGroup>
 
@@ -46,6 +47,7 @@ export default function SignupBox() {
                 borderBottom={"1px solid white"}
                 color={"white"}
                 fontSize={"19px"}
+                focusBorderColor={"none"}
               />
             </InputGroup>
 
@@ -61,6 +63,7 @@ export default function SignupBox() {
                 borderBottom={"1px solid white"}
                 color={"white"}
                 fontSize={"19px"}
+                focusBorderColor={"none"}
               />
             </InputGroup>
 
