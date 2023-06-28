@@ -27,12 +27,16 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #fff !important;
 }
 
-.active .sidebar-active{
-  background-color: #4B75A7;
+.active .sidebar-active {
+  background-color: #4b75a7;
   position: absolute;
   right: 0px;
   width: 300px;
   height: 80%;
   border-radius: 12px;
   z-index: 5;
+  transition: all 0.3s ease-in-out;
+}
+.active .sidebar-active + div > * {
+  transform: scale(1.2);
 }
