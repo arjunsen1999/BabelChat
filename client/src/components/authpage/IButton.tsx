@@ -40,9 +40,10 @@ export default function IButton() {
               <PopoverHeader>Information</PopoverHeader>
               <PopoverCloseButton />
               <PopoverBody>
-                <Text>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                  eaque animi tenetur quaerat deleniti.
+                <Text textAlign={"left"}>
+                  A user-friendly chat application with secure messaging,
+                  real-time communication, and customizable features for
+                  enhanced interactions.
                 </Text>
               </PopoverBody>
             </PopoverContent>
