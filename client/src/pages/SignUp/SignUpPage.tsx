@@ -3,6 +3,8 @@ import React from 'react'
 import PinkCircle from '../../components/authpage/PinkCircle'
 import BlueCircle from '../../components/authpage/BlueCircle'
 import Navbar from '../../components/authpage/Navbar'
+import AuthBox from '../../components/authpage/AuthBox'
+import IButton from '../../components/authpage/IButton'
 
 export default function SignUpPage() {
   return (
@@ -11,6 +13,8 @@ export default function SignUpPage() {
         <PinkCircle />
         <BlueCircle />
         <Navbar login={false} signup={true} />
+        <AuthBox condition={true}/>
+        <IButton />
      </Box>
     </>
   )

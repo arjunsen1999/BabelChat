@@ -14,6 +14,7 @@ export default function Navbar({ login, signup }: NavbarProps) {
         display={"flex"}
         alignItems={"center"}
         justifyContent={"space-between"}
+        mb={"60px"}
       >
         <Box>
           <Text fontSize={"30px"} cursor={"pointer"} color={"white"}>

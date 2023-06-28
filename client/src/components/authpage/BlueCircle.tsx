@@ -5,7 +5,7 @@ export default function BlueCircle() {
   return (
     <>
     <Box
-        w={"600px"}
+        w={"40%"}
         h="600px"
         bg={"#1d3082"}
         position={"absolute"}
