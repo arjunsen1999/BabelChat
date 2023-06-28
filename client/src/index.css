@@ -1,10 +1,20 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-body{
+body {
   width: 100%;
   min-height: 100vh;
+}
+:root {
+  --main-color: #34a853;
+  --seclected-option: #4b75a7;
+  --notification: #b84c0f;
+  --chat-sec-bg: #424b52;
+  --background: #1d262d;
+  --setting: #353e45;
+  --auth-round-blue: #1d3082;
+  --auth-round-pink: #7b1386;
 }
