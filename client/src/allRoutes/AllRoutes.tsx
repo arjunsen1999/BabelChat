@@ -6,6 +6,7 @@ import SignUpPage from "../pages/SignUp/SignUpPage";
 import Home from "../pages/Home/Home";
 import Group from "../pages/Group/Group";
 import Setting from "../pages/Setting/Setting";
+import Loader from "../Loader";
 
 export default function AllRoutes() {
   return (
@@ -16,6 +17,7 @@ export default function AllRoutes() {
         <Route path="/setting" element={<Setting />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/loading" element={<Loader />} />
         <Route path="/" element={<ErrorPage />} />
       </Routes>
     </>
