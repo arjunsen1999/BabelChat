@@ -40,3 +40,8 @@ input:-webkit-autofill:active {
 .active .sidebar-active + div > * {
   transform: scale(1.2);
 }
+
+/* .active > .sidebar-active-home{
+  background-color: #4B75A7;
+} */
+
