@@ -7,18 +7,23 @@ import Home from "../pages/Home/Home";
 import Group from "../pages/Group/Group";
 import Setting from "../pages/Setting/Setting";
 import Loader from "../Loader";
+import ChatPage from "../pages/Home/Chat";
+import UserChat from "../pages/Home/Chat/UserChat";
 
 export default function AllRoutes() {
   return (
     <>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />}>
+          <Route index element={<ChatPage />} />
+          <Route path={`chat/:id`} element={<UserChat />} />
+        </Route>
         <Route path="/group" element={<Group />} />
         <Route path="/setting" element={<Setting />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/loading" element={<Loader />} />
-        <Route path="/" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );

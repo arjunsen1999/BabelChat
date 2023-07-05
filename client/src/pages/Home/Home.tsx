@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import React from "react";
 import SideBar from "../../components/sidebar/SideBar";
 import RecentContainer from "../../components/home/RecentContainer";
+import { Outlet } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -22,7 +23,9 @@ export default function Home() {
           <Box h='100vh' p={"40px 20px"} borderRightWidth={"1px"}>
             <RecentContainer />
           </Box>
-          <Box h='100vh' p={"40px 20px"}></Box>
+          <Box h='100vh' p={"40px 20px 10px"}>
+            <Outlet />
+          </Box>
         </Box>
       </Box>
     </>

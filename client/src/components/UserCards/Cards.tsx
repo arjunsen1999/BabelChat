@@ -17,7 +17,7 @@ import { NavLink } from "react-router-dom";
 export default function Cards() {
   return (
     <>
-      <NavLink to={"/home"}>
+      <NavLink to={"/chat/83878387"}>
         <Box
           px={4}
           py={2}

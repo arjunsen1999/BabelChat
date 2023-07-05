@@ -8,7 +8,7 @@ import { RxExit } from "react-icons/rx";
 import NavItem from "./NavItem";
 
 const NavItemIcon = [
-  {icon : <MdSend color="white" fontSize={"20px"}/>, link : "/home"},
+  {icon : <MdSend color="white" fontSize={"20px"}/>, link : "/"},
   {icon : <HiUserGroup color="white" fontSize={"20px"}/>, link : "/group"},
   {icon : <AiFillSetting color="white" fontSize={"20px"}/>, link : "/setting"},
 ]
