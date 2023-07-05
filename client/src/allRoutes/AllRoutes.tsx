@@ -9,17 +9,18 @@ import Setting from "../pages/Setting/Setting";
 import Loader from "../Loader";
 import ChatPage from "../pages/Home/Chat";
 import UserChat from "../pages/Home/Chat/UserChat";
+import MakePrivate from "../hoc/MakePrivate";
 
 export default function AllRoutes() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route index element={<ChatPage />} />
-          <Route path={`chat/:id`} element={<UserChat />} />
+        <Route path="/" element={<MakePrivate><Home /></MakePrivate>}>
+          <Route index element={<MakePrivate><ChatPage /></MakePrivate>} />
+          <Route path={`chat/:id`} element={<MakePrivate><UserChat /></MakePrivate>} />
         </Route>
-        <Route path="/group" element={<Group />} />
-        <Route path="/setting" element={<Setting />} />
+        <Route path="/group" element={<MakePrivate><Group /></MakePrivate>} />
+        <Route path="/setting" element={<MakePrivate><Setting /></MakePrivate>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/loading" element={<Loader />} />
