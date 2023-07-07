@@ -48,3 +48,12 @@ input:-webkit-autofill:active {
 .hide-scroll-bar::-webkit-scrollbar {
   width: 0px; /* Adjust as needed */
 }
+
+.user-search-scroll-bar::-webkit-scrollbar{
+  width: 6px;
+  
+}
+.user-search-scroll-bar::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #34A853;
+}

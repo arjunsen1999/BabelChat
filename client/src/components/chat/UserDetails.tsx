@@ -4,7 +4,6 @@ import {
   Heading,
   Menu,
   MenuButton,
-  MenuItem,
   MenuList,
   Text,
 } from "@chakra-ui/react";

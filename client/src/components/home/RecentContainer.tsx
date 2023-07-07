@@ -1,8 +1,9 @@
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import PageHeading from "../heading/PageHeading";
 import SearchBox from "./SearchBox";
 import Cards from "../UserCards/Cards";
+import NewChat from "./NewChat";
 
 export default function RecentContainer() {
   return (
@@ -14,7 +15,15 @@ export default function RecentContainer() {
         <Box mb={"10px"}>
           <SearchBox />
         </Box>
-        <Box mb={"10px"} border={"1px solid white"}></Box>
+        <Box
+          mb={"10px"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
+          <Text color={"white"}>Message</Text>
+          <NewChat />
+        </Box>
         <Stack
           spacing={2}
           bg={"#353E45"}
