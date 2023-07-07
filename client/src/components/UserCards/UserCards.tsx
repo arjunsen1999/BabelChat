@@ -26,7 +26,7 @@ export default function UserCards() {
               Online
             </Text>
           </Flex>
-          <Button bg={"#1d262d"} color={"white"} h={"30px"}>Add User</Button>
+          <Button bg={"#1d262d"} color={"white"} h={"30px"}>Add</Button>
         </HStack>
         <Text
           color={useColorModeValue("gray.700", "gray.400")}
