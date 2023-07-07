@@ -3,7 +3,7 @@ import React from "react";
 import UserDetails from "../../../components/chat/UserDetails";
 import HomeUserChat from "../../../components/chat/UserChat";
 import { MdSend } from "react-icons/md";
-import { BsEmojiSmile } from "react-icons/bs";
+import { BsEmojiSmile, BsFillCameraVideoFill } from "react-icons/bs";
 import { ImAttachment } from "react-icons/im";
 
 export default function UserChat() {
@@ -20,9 +20,17 @@ export default function UserChat() {
         <Box
           p={"10px 50px"}
           display={"grid"}
-          gridTemplateColumns={"50px 50px 1fr 50px"}
+          gridTemplateColumns={"50px 50px 50px 1fr 50px"}
           gap={"10px"}
         >
+          <Box
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            cursor={"pointer"}
+          >
+            <BsFillCameraVideoFill fontSize={"28px"} color="#4B75A7" />
+          </Box>
           <Box
             display={"flex"}
             alignItems={"center"}
