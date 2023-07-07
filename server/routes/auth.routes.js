@@ -5,11 +5,22 @@ const { body } = require("express-validator");
 
 authRouter.route("/signup").post(
   [
-    body("name", "Enter your name").not().isEmpty(),
-    body("email", "Enter a vaild email").isEmail(),
-    body("password", "Password length must be atleast 4").isLength({
-      min: 4,
-    }),
+    // name is required
+    body("name").notEmpty().withMessage("Name is required"),
+    // email required and valid email
+    body("email", "Enter a vaild email")
+      .notEmpty()
+      .withMessage("Email is required")
+      .isEmail()
+      .withMessage("Invalid email"),
+    // Password is required and password length must be atleast 4
+    body("password")
+      .notEmpty()
+      .withMessage("Password is required")
+      .isLength({
+        min: 4,
+      })
+      .withMessage("Password length must be atleast 4"),
   ],
   middleware.validationError,
   auth.signup
@@ -17,10 +28,20 @@ authRouter.route("/signup").post(
 
 authRouter.route("/login").post(
   [
-    body("email", "Enter a vaild email").isEmail(),
-    body("password", "Password length must be atleast 4").isLength({
-      min: 4,
-    }),
+    // email required and valid email
+    body("email", "Enter a vaild email")
+      .notEmpty()
+      .withMessage("Email is required")
+      .isEmail()
+      .withMessage("Invalid email"),
+    // Password is required and password length must be atleast 4
+    body("password")
+      .notEmpty()
+      .withMessage("Password is required")
+      .isLength({
+        min: 4,
+      })
+      .withMessage("Password length must be atleast 4"),
   ],
   middleware.validationError,
   auth.login
