@@ -22,8 +22,8 @@ export default function NewChat() {
       >
         New Chat
       </Button>
-      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose} size={"xl"}>
-        <ModalOverlay />
+      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose} size={"xl"} >
+        <ModalOverlay filter="blur(20px)"/>
         <ModalContent bg={"none"}>
           <ModalBody bg={"none"}>
             <Input
@@ -49,6 +49,12 @@ export default function NewChat() {
               overflowY={"scroll"}
               className="user-search-scroll-bar"
             >
+                <UserCards />
+                <UserCards />
+                <UserCards />
+                <UserCards />
+                <UserCards />
+                <UserCards />
                 <UserCards />
                 <UserCards />
                 <UserCards />
