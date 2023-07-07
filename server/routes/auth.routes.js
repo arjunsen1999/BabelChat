@@ -5,7 +5,7 @@ const { body } = require("express-validator");
 
 authRouter.route("/signup").post(
   [
-    body("name", "Enter a vaild email").isEmail(),
+    body("name", "Enter your name").not().isEmpty(),
     body("email", "Enter a vaild email").isEmail(),
     body("password", "Password length must be atleast 4").isLength({
       min: 4,
