@@ -24,6 +24,7 @@ export default function ChatBar({ sender, content }: ChatBarProps) {
           maxWidth="70%"
           width="fit-content"
           position={"relative"}
+          _hover={{ shadow: "lg" }}
         >
           {/* <Box bg={"red"} w={"30px"} h="30px" position={"absolute"} bottom={"-10px"} ></Box> */}
           <Text color={sender === "user" ? "white" : "black"}>{content}</Text>

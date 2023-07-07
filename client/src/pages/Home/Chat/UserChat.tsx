@@ -15,7 +15,7 @@ export default function UserChat() {
         gridTemplateRows={"100px 1fr 60px"}
         gap={"20px"}
       >
-        <UserDetails />
+        <UserDetails status={true} name="Arjun Sen" image="https://sjhjhj" />
         <HomeUserChat />
         <Box
           p={"10px 50px"}
