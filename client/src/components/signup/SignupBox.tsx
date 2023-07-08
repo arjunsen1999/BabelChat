@@ -1,14 +1,27 @@
 import { Box } from "@chakra-ui/react";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState, useEffect } from "react";
 import { Button, Checkbox, Stack, Text } from "@chakra-ui/react";
 import { AiOutlineMail } from "react-icons/ai";
 import { BiLock } from "react-icons/bi";
 import { CiUser } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import SignupInputBox from "./SignupInputBox";
 import { signup_initialState_types } from "../../Types/Signup.Types";
-import { Event_value_name_types } from "../../Types/State.Types";
+import {
+  Event_value_name_types,
+  StateReduxTypes,
+} from "../../Types/State.Types";
+import { useDispatch, useSelector } from "react-redux";
+import { signup_action } from "../../redux/auth/auth.action";
+import { Dispatch } from "redux";
+import { auth_reset } from "../../redux/auth/auth.actionType";
+import { InitialStateType } from "../../Types/Auth.Types";
 export default function SignupBox() {
+  const dispatch: Dispatch<any> = useDispatch();
+  const { isSuccess, isError } = useSelector(
+    (state: StateReduxTypes): InitialStateType => state.auth
+  );
+  const navigate: NavigateFunction = useNavigate();
   // input data initail state start
   const initailState: signup_initialState_types = {
     email: "",
@@ -29,8 +42,14 @@ export default function SignupBox() {
   // input data initail state end
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    console.log(Input)
+    dispatch(signup_action(Input));
   };
+  useEffect((): void => {
+    if (isSuccess) {
+      navigate("/login");
+    }
+    dispatch({ type: auth_reset });
+  }, [isSuccess]);
   return (
     <>
       <Box w={"400px"}>

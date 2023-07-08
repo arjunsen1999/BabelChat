@@ -10,7 +10,7 @@ export type DataTypes = boolean | string | null | any | undefined;
 
 export type Auth_Reducer_Action_Types = {
   type: string;
-  payload: any;
+  payload?: any;
 };
 
 export type authTypes = {

@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 // All Routes
-app.use('/auth', authRouter);
+app.use("/auth", authRouter);
 
 // if Routes are not exists
 app.all("*", (req, res, next) => {
