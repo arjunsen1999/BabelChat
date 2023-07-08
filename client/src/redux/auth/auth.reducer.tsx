@@ -4,6 +4,10 @@ import {
   InitialStateType,
 } from "../../Types/Auth.Types";
 import {
+  login_action_types,
+  login_initialState_types,
+} from "../../Types/Login.Types";
+import {
   signup_action_types,
   signup_initialState_types,
 } from "../../Types/Signup.Types";
@@ -37,6 +41,12 @@ const initialState: InitialStateType = {
 // signup state reducer initial state
 const signup_initialState: signup_initialState_types = {
   name: "",
+  email: "",
+  password: "",
+};
+
+// login state reducer initial state
+const login_initialState: login_initialState_types = {
   email: "",
   password: "",
 };
@@ -102,6 +112,36 @@ export const signup_state_reducer = (
       return {
         ...state,
         name: "",
+        email: "",
+        password: "",
+      };
+
+    default:
+      return state;
+  }
+};
+
+// login state reducer
+export const login_state_reducer = (
+  state: login_initialState_types = login_initialState,
+  { type, payload }: login_action_types
+): login_initialState_types => {
+  switch (type) {
+    case login_email:
+      return {
+        ...state,
+        email: payload,
+      };
+
+    case login_password:
+      return {
+        ...state,
+        password: payload,
+      };
+
+    case login_reset:
+      return {
+        ...state,
         email: "",
         password: "",
       };
