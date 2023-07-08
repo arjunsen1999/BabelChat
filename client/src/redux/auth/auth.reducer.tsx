@@ -1,4 +1,12 @@
-import { Auth_Reducer_Action_Types, DataTypes, InitialStateType } from "../../Types/Auth.Types";
+import {
+  Auth_Reducer_Action_Types,
+  DataTypes,
+  InitialStateType,
+} from "../../Types/Auth.Types";
+import {
+  signup_action_types,
+  signup_initialState_types,
+} from "../../Types/Signup.Types";
 import {
   auth_isError,
   auth_isLoading,
@@ -6,11 +14,19 @@ import {
   auth_reset,
 } from "./auth.actionType";
 
-const storedData = localStorage.getItem("babelChatData");
-const data: DataTypes = storedData
-  ? JSON.parse(storedData)
-  : false;
+import {
+  signup_name,
+  signup_email,
+  signup_password,
+  signup_reset,
+} from "./auth.actionType";
 
+import { login_email, login_password, login_reset } from "./auth.actionType";
+
+const storedData = localStorage.getItem("babelChatData");
+const data: DataTypes = storedData ? JSON.parse(storedData) : false;
+
+// auth reducer initial state
 const initialState: InitialStateType = {
   isAuth: data,
   loading: false,
@@ -18,6 +34,14 @@ const initialState: InitialStateType = {
   isError: false,
 };
 
+// signup state reducer initial state
+const signup_initialState: signup_initialState_types = {
+  name: "",
+  email: "",
+  password: "",
+};
+
+// auth reducer
 export const auth_reducer = (
   state = initialState,
   { type, payload }: Auth_Reducer_Action_Types
@@ -45,6 +69,41 @@ export const auth_reducer = (
         loading: false,
         isSuccess: false,
         isError: false,
+      };
+
+    default:
+      return state;
+  }
+};
+
+// signup state reducer
+export const signup_state_reducer = (
+  state: signup_initialState_types = signup_initialState,
+  { type, payload }: signup_action_types
+) => {
+  switch (type) {
+    case signup_name:
+      return {
+        ...state,
+        name: payload,
+      };
+    case signup_email:
+      return {
+        ...state,
+        email: payload,
+      };
+    case signup_password:
+      return {
+        ...state,
+        password: payload,
+      };
+
+    case signup_reset:
+      return {
+        ...state,
+        name: "",
+        email: "",
+        password: "",
       };
 
     default:
