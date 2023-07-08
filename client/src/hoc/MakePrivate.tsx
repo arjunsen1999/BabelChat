@@ -1,10 +1,14 @@
-import React, { ReactNode } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-type PrivateRouteProps = {
-  children?: ReactNode;
-};
+import { PrivateRouteProps, StateReduxTypes } from "../Types/State.Types";
+import { InitialStateType, authTypes } from "../Types/Auth.Types";
+
 export default function MakePrivate({ children }: PrivateRouteProps) {
-  const isAuth: boolean = true;
+  const { isAuth }: authTypes = useSelector(
+    (state: StateReduxTypes): InitialStateType => state.auth
+  );
+  console.log(isAuth);
   if (!isAuth) {
     return <Navigate to={"/login"} />;
   }
