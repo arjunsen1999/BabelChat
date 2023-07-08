@@ -1,35 +1,63 @@
 import { Box } from "@chakra-ui/react";
-import React from "react";
-import {
-  Button,
-  Checkbox,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
+import { Button, Checkbox, Stack, Text } from "@chakra-ui/react";
 import { AiOutlineMail } from "react-icons/ai";
 import { BiLock } from "react-icons/bi";
 import { CiUser } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import SignupInputBox from "./SignupInputBox";
+import { signup_initialState_types } from "../../Types/Signup.Types";
+import { Event_value_name_types } from "../../Types/State.Types";
 export default function SignupBox() {
+  // input data initail state start
+  const initailState: signup_initialState_types = {
+    email: "",
+    password: "",
+    name: "",
+  };
+  const [Input, setInput] = useState<signup_initialState_types>(initailState);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const { name, value }: Event_value_name_types = event.target;
+    setInput((prev: signup_initialState_types): signup_initialState_types => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
+  // input data initail state end
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    console.log(Input)
+  };
   return (
     <>
       <Box w={"400px"}>
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <Stack spacing={6} mb="30px">
             <SignupInputBox
               type="text"
+              name="name"
               placeholder="Enter Name"
+              handleChange={handleChange}
+              value={Input.name}
               icon={<CiUser color="white" fontSize={"28px"} />}
             />
             <SignupInputBox
               type="email"
+              name="email"
               placeholder="Enter Email"
+              handleChange={handleChange}
+              value={Input.email}
               icon={<AiOutlineMail color="white" fontSize={"28px"} />}
             />
             <SignupInputBox
               type="password"
+              name="password"
               placeholder="Enter Password"
+              handleChange={handleChange}
+              value={Input.password}
               icon={<BiLock color="white" fontSize={"28px"} />}
             />
 

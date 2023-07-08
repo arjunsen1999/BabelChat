@@ -6,6 +6,9 @@ export default function SignupInputBox({
   icon,
   type,
   placeholder,
+  value,
+  handleChange,
+  name,
 }: SignupInputBoxProps) {
   return (
     <>
@@ -13,9 +16,12 @@ export default function SignupInputBox({
         <InputLeftElement pointerEvents="none">{icon}</InputLeftElement>
         <Input
           type={type}
+          name={name}
           borderRadius={"0px"}
           placeholder={placeholder}
           border={"none"}
+          value={value}
+          onChange={handleChange}
           borderBottom={"1px solid white"}
           color={"white"}
           fontSize={"19px"}

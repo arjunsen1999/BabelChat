@@ -1,9 +1,12 @@
-import { ReactElement } from "react";
+import { ChangeEvent, ReactElement } from "react";
 
 export type SignupInputBoxProps = {
   icon: ReactElement;
   type: string;
   placeholder: string;
+  value: string;
+  handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  name: string;
 };
 
 export type signup_initialState_types = {
@@ -11,8 +14,3 @@ export type signup_initialState_types = {
   email: string;
   password: string;
 };
-
-export type signup_action_types = {
-    type : string,
-    payload : string
-}

@@ -8,3 +8,8 @@ export type StateReduxTypes = {
 export type PrivateRouteProps = {
   children?: ReactNode;
 };
+
+export type Event_value_name_types = {
+  name: string;
+  value: string | number;
+};
