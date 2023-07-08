@@ -1,11 +1,6 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import React, { ReactElement } from "react";
-
-type SignupInputBoxProps = {
-  icon: ReactElement;
-  type: string;
-  placeholder: string;
-};
+import React from "react";
+import { SignupInputBoxProps } from "../../Types/Signup.Types";
 
 export default function SignupInputBox({
   icon,
@@ -15,9 +10,7 @@ export default function SignupInputBox({
   return (
     <>
       <InputGroup>
-        <InputLeftElement pointerEvents="none">
-          {icon}
-        </InputLeftElement>
+        <InputLeftElement pointerEvents="none">{icon}</InputLeftElement>
         <Input
           type={type}
           borderRadius={"0px"}
