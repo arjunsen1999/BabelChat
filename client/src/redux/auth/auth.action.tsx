@@ -19,7 +19,6 @@ export const signup_action =
         `${process.env.REACT_APP_BACKEND_URL}/auth/signup`,
         formData
       );
-      console.log("hello")
       dispatch({ type: auth_isLoading, payload: false });
       notification("success", data.message);
       dispatch({ type: auth_isSuccess });
